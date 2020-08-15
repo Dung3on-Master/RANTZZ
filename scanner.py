@@ -1,4 +1,4 @@
-import sys, os, time, tkinter, wget, ctypes, click
+import sys, os, time, tkinter, ctypes, click
 from tkinter import messagebox
 
 def scanstart():
@@ -7,10 +7,8 @@ def scanstart():
     user = os.getenv('username')
     whatfile = input("what file should we scan? (desktop, downloads, documents, etc), (please start with a capital): ")
 
-    print(user)
-
     myfile = ''
-    os.chdir("C:/Users/maxmi/Desktop/antiVIRUS")
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     myfile = open("threats.txt", "r")
     content = myfile.read()
 
