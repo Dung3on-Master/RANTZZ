@@ -9,12 +9,10 @@ def autoscanstart():
 
     print(user)
 
-    myfile = ''
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
-    myfile = open("threats.txt", "r")
-    content = myfile.read()
-
-    allthreats = content.split(', ')
+    with open('threats.txt') as inputfile:
+        threats = ", ".join([line.rstrip("\n") for line in inputfile])
+        allthreats = threats.split(', ')
 
     #start scan
     root = tkinter.Tk()
@@ -58,7 +56,7 @@ def autoscanstart():
     infectfiles = []
     for prog in progs:
 
-        if os.path.basename(prog) in allthreats:
+        if os.path.basename(prog) in [allthreats]:
             print(f"{prog} is infected")
             infectfiles.append(prog)
 

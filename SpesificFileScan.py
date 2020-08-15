@@ -101,7 +101,7 @@ def spesificscanstart():
         if os.path.basename(prog) == f"{Whatfile}":
             print("Found!")
 
-            if os.path.basename(prog) in allthreats:
+            if os.path.basename(prog) in [allthreats]:
                 print(f"{prog} is infected")
                 infectfiles.append(prog)
 
