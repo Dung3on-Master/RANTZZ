@@ -108,3 +108,15 @@ starting.bat
 ilikefiles.py
 payload.py
 oops.bat
+VirusBursters 6.2.lnk
+vb 6.1.lnk
+VirusBurster 6.2.lnk
+VirusBurster 6.3.lnk
+Virus-Burst 6.1.lnk
+Virus-Bursters 6.3.lnk
+Virus-Burst.lnk
+VirusBurster.lnk
+Uninstall VirusBurst 6.1.lnk
+VirusBurst 6.1 Website.lnk
+VirusBurst 6.1.lnk
+Virus-Burst.exe
