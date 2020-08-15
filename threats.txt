@@ -1,1 +1,110 @@
-LOVE-LETTER-FOR-YOU.TXT.vbs, 394a7.exe, csrss.exe, asmsupd3804755.vbs, mbt4657.scr, mbt3F9F.scr, Templates.exe, Bron.tok.A4.em.bin, SysinfY2X.db, brsh32.exe, GiftBag.db, Contrax.tst, MMC.exe, 1.dll, 000.exe, ffdf.py, g.py, good.txt, good.bat, ICU.py, ICU controll.bat, dld.py, starting.bat, ilikefiles.py, payload.py, oops.bat, cmd-brontok.exe, Credentials.exe, Empty.pif, svchost.exe, KesenjanganSosial.exe, lsass.exe, SMSS.EXE, offer_downloader.exe, RakyatKelaparan.exe, Msft_Kernel_webinstr_01009.Wdf, SecurityService.exe, file.exe, Namruntom.tst, scanner.exe, inst.lat, WaterMark.exe, Zoomit.tst, bi3.exe, 1.exe, winsvc32.exe
+patch.exe
+windefender.exe
+csrss
+csrss.exe
+asmsupd3804755.vbs
+mbt4657.scr
+mbt3F9F.scr
+Templates.exe
+Roaming.exe
+cmd-brontok.exe
+Administrator's Setting.scr
+Update.17.Bron.Tok.bin
+Bron.tok.A17.em.bin
+Loc.Mail.Bron.Tok
+Cookies.exe
+MMC.exe
+Credentials.exe
+Startup.exe
+Empty.pif
+svchost.exe
+14004-NendangBro.com
+KesenjanganSosial.exe
+lsass.exe
+services.exe
+winlogon.exe
+RakyatKelaparan.exe
+SMSS.EXE
+offer_downloader.exe
+Msft_Kernel_webinstr_01009.Wdf
+Update Service YourFileDownloader
+SecurityService.exe
+svchost.com
+Safe Saver-chromeinstaller
+Advanced-PC-Care_Logon
+FreeFileViewerUpdateChecker
+speedial.crx
+_5eMembers_@www.translationbuddy.com
+da522ff3-905e-4d23-bb9b-1a1726cf042b-5_user
+da522ff3-905e-4d23-bb9b-1a1726cf042b-14
+da522ff3-905e-4d23-bb9b-1a1726cf042b-13
+file.exe
+AutoUpdate.exe
+crash_service
+Run_Bobby_Browser
+SourceHash5266F634-7B7D-4537-BDDC-98DD6CFCBAA1
+Start WinZip Driver Updater Check Driver Update
+Start WinZip Driver Updater Update
+S--Dox.tst
+Namruntom.tst
+abb@amazon.com.xpi
+Bron.tok.A4.em.bin
+SysinfY2X.db
+DllKitPRO
+rfedv.exe
+ZaamNamin.exe
+Techdax.exe
+Contrax.tst
+Roundstock.tst
+DriverToolkit Autorun
+UpProVerified2
+UpProVerified
+GiftBag.db
+Updater_Online_Application
+http_newtabtv.com_0.localstorage
+http_gamingwonderland.dl.myway.com_0.localstorage
+winsvc32.exe
+1.exe
+1.dll
+psv_Touchsilfan
+2bf146aac2c169a78b4a2abb0904cdd7.ps1
+prifass.sys
+sham.db
+Manager
+po.db
+bi3.exe
+psv_Movehome
+freehdsport@freehdsport.tv.xpi
+GoforFilesUpdate
+Gophoto.it
+Incredibar.com
+mysearchdial_speedial_v9.0.2.crx
+_hyMembersttab03_@free.formfetcherpro.com.xpi
+GDl32.dll
+BabylonNG_setup.exe
+Tools_Update_CFAC34AB-5DB5-4dea-94EC-1D42E3942873
+hosts
+Zoomit.tst
+chrome-extension_agimnfedoejnbcaboobehgdeppecefap_0.localstorage
+chrome-extension_jjkofiknkjdjgkkbfdibgajealfbjhdj_0.localstorage
+inst.lat
+scanner.exe
+trustedshopper.safariextz
+chrome-extension_pelmeidfhdlhlbjimpabfcbnnojbboma_0.localstorage
+WaterMark.exe
+PowerReg Scheduler.exeStartup
+Unofan.tst
+Ranlab.tst
+24436206-088d-4a1a-8d0e-cf93ca7a2d23.xpi
+Online Application V2G6
+ffdf.py
+g.py
+good.txt
+good.bat
+ICU.py
+ICU controll.bat
+dld.py
+starting.bat
+ilikefiles.py
+payload.py
+oops.bat
