@@ -13,7 +13,6 @@ def spesificscanstart():
     content = myfile.read()
 
     allthreats = content.split(', ')
-    print(allthreats)
 
 
     #start scan

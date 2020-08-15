@@ -15,7 +15,6 @@ def autoscanstart():
     content = myfile.read()
 
     allthreats = content.split(', ')
-    print(allthreats)
 
     #start scan
     root = tkinter.Tk()
