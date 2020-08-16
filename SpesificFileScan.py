@@ -7,12 +7,15 @@ def spesificscanstart():
     user = os.getenv('username')
     Whatfile = input("What File Should We Scan? ")
 
-    myfile = ''
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
-    myfile = open("threats.txt", "r")
-    content = myfile.read()
+    with open('threats.txt') as inputfile:
+        threats = ", ".join([line.rstrip("\n") for line in inputfile])
+        allthreats = threats.split(', ')
 
-    allthreats = content.split(', ')
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
+
+    with open("threatextentions.txt") as inputfile:
+        allthreatsexten = inputfile.read().split(', ')
 
 
     #start scan
@@ -39,7 +42,6 @@ def spesificscanstart():
 
     #collect and show all files
 
-    print("Files Scanned:  \n")
     time.sleep(0.4)
 
 
@@ -52,6 +54,7 @@ def spesificscanstart():
     path5 = f'C:/Users/{user}/Pictures'
     path6 = f'C:/Users/{user}/Videos'
     path7 = f'C;/Users/{user}/3D Objects'
+    path8 = f'C:/Users/{user}/AppData'
 
 
     progs = [ ]
@@ -91,6 +94,11 @@ def spesificscanstart():
             fullName = os.path.join(root, name)
             progs.append(fullName)
 
+    for root, directories, files in os.walk(path8, topdown=True):
+        for name in files:
+            fullName = os.path.join(root, name)
+            progs.append(fullName)
+
 
 
     #check if they are a virus program
@@ -112,6 +120,12 @@ def spesificscanstart():
             elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
                 print(f"{prog} was made by a malicious file")
                 infectfiles.append(prog)
+
+            for ext in allthreatsexten:
+                if os.path.basename(prog).endswith(ext):
+                    print(f"{prog} may be infected")
+                    infectfiles.append(prog)
+
 
         else:
             print("searching")

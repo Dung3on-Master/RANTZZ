@@ -5,14 +5,16 @@ def scanstart():
 
 
     user = os.getenv('username')
-    whatfile = input("what file should we scan? (desktop, downloads, documents, etc), (please start with a capital): ")
+    whatfile = input("what folder should we scan? (desktop, downloads, documents, etc), (please start with a capital): ")
 
-    myfile = ''
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
-    myfile = open("threats.txt", "r")
-    content = myfile.read()
+    with open("threats.txt") as inputfile:
+        threats = ", ".join([line.rstrip("\n") for line in inputfile])
+        allthreats = threats.split(', ')
 
-    allthreats = content.split(', ')
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
+    with open("threatextentions.txt") as inputfile:
+        allthreatsexten = inputfile.read().split(', ')
 
     #start scan
 
@@ -68,6 +70,11 @@ def scanstart():
         elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
             print(f"{prog} was made by a malicious file")
             infectfiles.append(prog)
+
+        for ext in allthreatsexten:
+            if os.path.basename(prog).endswith(ext):
+                print(f"{prog} may be infected")
+                infectfiles.append(prog)
 
 
     #end

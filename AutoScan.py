@@ -6,13 +6,14 @@ def autoscanstart():
 
     user = os.getenv('username')
     
-
-    print(user)
-
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open('threats.txt') as inputfile:
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
+
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
+    with open("threatextentions.txt") as inputfile:
+        allthreatsexten = inputfile.read().split(', ')
 
     #start scan
     root = tkinter.Tk()
@@ -68,6 +69,11 @@ def autoscanstart():
         elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
             print(f"{prog} was made by a malicious file")
             infectfiles.append(prog)
+
+        for ext in allthreatsexten:
+            if os.path.basename(prog).endswith(ext):
+                print(f"{prog} may be infected")
+                infectfiles.append(prog)
 
 
     #warnings and telling you to delete the files
