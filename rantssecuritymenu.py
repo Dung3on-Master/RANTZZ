@@ -4,15 +4,12 @@ from tkinter import *
 import scanner
 import filemover
 import fullscan
-import AutoScan
 import SpesificFileScan
 
 
 def rantsstart():
 
    master = Tk()
-
-   AutoScan.autoscanstart()
    
    Label(master, text="Rantzz Security").grid(row=0, sticky=W)
 

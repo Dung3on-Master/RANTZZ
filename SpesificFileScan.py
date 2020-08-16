@@ -109,26 +109,20 @@ def spesificscanstart():
         if os.path.basename(prog) == f"{Whatfile}":
             print("Found!")
 
-            if os.path.basename(prog) in [allthreats]:
-                print(f"{prog} is infected")
-                infectfiles.append(prog)
+            infectfiles = []
+            with click.progressbar(progs) as bar:
+                for prog in bar:
 
-            elif os.path.basename(prog) in ["deadcomputer.jpg"]:
-                print(f"{prog} was made by a malicious file")
-                infectfiles.append(prog)
+                    if os.path.basename(prog) in allthreats:
+                        infectfiles.append(prog)
 
-            elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
-                print(f"{prog} was made by a malicious file")
-                infectfiles.append(prog)
+                    elif os.path.basename(prog) in ["deadcomputer.jpg"]:
+                        infectfiles.append(prog)
 
-            for ext in allthreatsexten:
-                if os.path.basename(prog).endswith(ext):
-                    print(f"{prog} may be infected")
-                    infectfiles.append(prog)
+                    for ext in allthreatsexten:
+                        if os.path.basename(prog).endswith(ext):
+                            infectfiles.append(prog)
 
-
-        else:
-            print("searching")
         
 
     #warnings and telling you to delete the files

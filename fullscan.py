@@ -29,31 +29,13 @@ def fullscanstart():
 
     time.sleep(1)
 
-    with click.progressbar(range(1000000)) as bar:
-        for i in bar:
-            pass
-
-
-
-
-
-
     #collect and show all files
 
-    print("Files Scanned:  \n")
-    time.sleep(0.4)
 
+    os.chdir('C:/')
 
-    os.chdir(f'C:/Users/{user}')
+    path1 = 'C:/'
 
-    path1 = f'C:/Users/{user}/Downloads'
-    path2 = f'C:/Users/{user}/Desktop'
-    path3 = f'C:/Users/{user}/Documents'
-    path4 = f'C:/Users/{user}/Music'
-    path5 = f'C:/Users/{user}/Pictures'
-    path6 = f'C:/Users/{user}/Videos'
-    path7 = f'C:/Users/{user}/3D Objects'
-    path8 = f'C:/Users/{user}/AppData'
 
 
     progs = [ ]
@@ -61,75 +43,24 @@ def fullscanstart():
     for root, directories, files in os.walk(path1, topdown=True):
         for name in files:
             fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
             progs.append(fullName)
-
-    for root, directories, files in os.walk(path2, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path3, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path4, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path5, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path6, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path7, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
-    for root, directories, files in os.walk(path8, topdown=True):
-        for name in files:
-            fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
-            progs.append(fullName)
-
 
 
     #check if they are a virus program
 
     infectfiles = []
-    for prog in progs:
+    with click.progressbar(progs) as bar:
+        for prog in bar:
 
-        if os.path.basename(prog) in allthreats:
-            print(f"{prog} is infected")
-            infectfiles.append(prog)
-
-
-        elif os.path.basename(prog) in ["deadcomputer.jpg", ""]:
-            print(f"{prog} was made by a malicious file")
-            infectfiles.append(prog)
-
-        elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
-            print(f"{prog} was made by a malicious file")
-            infectfiles.append(prog)
-
-        for ext in allthreatsexten:
-            if os.path.basename(prog).endswith(ext):
-                print(f"{prog} may be infected")
+            if os.path.basename(prog) in allthreats:
                 infectfiles.append(prog)
+
+            elif os.path.basename(prog) in ["deadcomputer.jpg"]:
+                infectfiles.append(prog)
+
+            for ext in allthreatsexten:
+                if os.path.basename(prog).endswith(ext):
+                    infectfiles.append(prog)
     
 
     #warnings and telling you to delete the files
@@ -147,15 +78,16 @@ def fullscanstart():
 
         
         time.sleep(0.5)
-        delete = messagebox.askyesno(title="Delete files?", message="Do you wish to delete them?")
+        delete = messagebox.askyesno(title="Delete files?", message="Do you wish to delete them? are system can only do a basic delete.")
         if delete:
             messagebox.showinfo("Deleting", "Okay we will begin deleting them")
             time.sleep(1)
-            messagebox.showinfo("Sucsessfully Deleted", "The file/s were successfully removed")
 
             for x in infectfiles:
                 os.remove(x)
             time.sleep(1)
+            messagebox.showinfo("Sucsessfully Deleted", "The file/s were successfully removed")
+
         else:
             messagebox.showinfo("Not Deleting", "Okay")
 
@@ -165,8 +97,11 @@ def fullscanstart():
         root = tkinter.Tk()
         root.withdraw()
 
+    print(progs)
+
     time.sleep(4)
     print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
+
 
 if __name__ == "__main__":
     fullscanstart()

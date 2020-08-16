@@ -35,10 +35,6 @@ def scanstart():
 
     #show the files
 
-    print("Files Scanned:  \n")
-    time.sleep(0.4)
-
-
     os.chdir(f'C:/Users/{user}')
 
     path = f'C:/Users/{user}/{whatfile}'
@@ -48,7 +44,6 @@ def scanstart():
     for root, directories, files in os.walk(path, topdown=False):
         for name in files:
             fullName = os.path.join(root, name)
-            print(f"Scanned file: {name}")
             progs.append(fullName)
 
 
@@ -56,25 +51,18 @@ def scanstart():
     #check program
 
     infectfiles = []
-    for prog in progs:
+    with click.progressbar(progs) as bar:
+        for prog in bar:
 
-        if os.path.basename(prog) in [allthreats]:
-            print(f"{prog} is infected")
-            infectfiles.append(prog)
-
-
-        elif os.path.basename(prog) in ["deadcomputer.jpg", ""]:
-            print(f"{prog} was made by a malicious file")
-            infectfiles.append(prog)
-
-        elif os.path.basename(prog).startswith("kbdhid") and os.path.basename(prog).endswith(".sys"):
-            print(f"{prog} was made by a malicious file")
-            infectfiles.append(prog)
-
-        for ext in allthreatsexten:
-            if os.path.basename(prog).endswith(ext):
-                print(f"{prog} may be infected")
+            if os.path.basename(prog) in allthreats:
                 infectfiles.append(prog)
+
+            elif os.path.basename(prog) in ["deadcomputer.jpg"]:
+                infectfiles.append(prog)
+
+            for ext in allthreatsexten:
+                if os.path.basename(prog).endswith(ext):
+                    infectfiles.append(prog)
 
 
     #end
