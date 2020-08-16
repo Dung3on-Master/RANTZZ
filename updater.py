@@ -1,26 +1,29 @@
 import time, os, wget
 
-user = os.getenv('username')
 
-yesorno = input("Are you Sure? (y or n): ")
+def update():
 
-if yesorno == "y" or yesorno == "Y":
-    print("ok.  starting")
-    time.sleep(1)
+    user = os.getenv('username')
 
-    os.remove(f'C:/Users/{user}/Desktop/antiVIRUS/threats.txt')
-    os.remove(f'C:/Users/{user}/Desktop/antiVIRUS/threatextentions.txt')
+    yesorno = input("Are you Sure? (y or n): ")
 
-    time.sleep(4)
+    if yesorno == "y" or yesorno == "Y":
+        print("ok.  starting")
+        time.sleep(1)
 
-    url = 'https://rantzzsecurity.weebly.com/uploads/1/3/0/9/130919827/threats.txt'
-    wget.download(url, f'C:/Users/{user}/Desktop/antiVIRUS/threats.txt')
+        os.remove(f'C:/Users/{user}/Desktop/antiVIRUS/threats.txt')
+        os.remove(f'C:/Users/{user}/Desktop/antiVIRUS/threatextentions.txt')
 
-    url = 'https://rantzzsecurity.weebly.com/uploads/1/3/0/9/130919827/threatextentions.txt'
-    wget.download(url, f'C:/Users/{user}/Desktop/antiVIRUS/threatextentions.txt')
+        time.sleep(4)
+
+        url = 'https://rantzzsecurity.weebly.com/uploads/1/3/0/9/130919827/threats.txt'
+        wget.download(url, f'C:/Users/{user}/Desktop/antiVIRUS/threats.txt')
+
+        url = 'https://rantzzsecurity.weebly.com/uploads/1/3/0/9/130919827/threatextentions.txt'
+        wget.download(url, f'C:/Users/{user}/Desktop/antiVIRUS/threatextentions.txt')
 
 
-else:
-    print("ok.  stopping")
-    time.sleep(1)
-    
+    else:
+        print("ok.  stopping")
+        time.sleep(1)
+        

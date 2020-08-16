@@ -5,6 +5,7 @@ import scanner
 import filemover
 import fullscan
 import SpesificFileScan
+import updater
 
 
 def rantsstart():
@@ -20,6 +21,8 @@ def rantsstart():
    Button(master, text='File Scan', command=SpesificFileScan.spesificscanstart).grid(row=3, sticky=W, pady=4)
 
    Button(master, text='Move To Secure Folder', command=filemover.movetosurcurefolder).grid(row=4, sticky=W, pady=4)
+
+   Button(master, text='Update', command=updater.update).grid(row=5, sticky=W, pady=4)
 
    Button(master, text='Quit', command=master.quit).grid(row=6, sticky=W, pady=4)
    
