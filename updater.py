@@ -27,3 +27,7 @@ def update():
         print("ok.  stopping")
         time.sleep(1)
         
+    print("\n \n \n \n \n")
+        
+if __name__ == "__main__":
+    update()
