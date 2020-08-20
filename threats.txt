@@ -31,7 +31,6 @@ _5eMembers_@www.translationbuddy.com
 da522ff3-905e-4d23-bb9b-1a1726cf042b-5_user
 da522ff3-905e-4d23-bb9b-1a1726cf042b-14
 da522ff3-905e-4d23-bb9b-1a1726cf042b-13
-file.exe
 AutoUpdate.exe
 crash_service
 Run_Bobby_Browser
@@ -103,7 +102,6 @@ oops.bat
 confirmation.key
 enc_files.txt
 last_chance.txt
-message.txt
 recovery_file.txt
 recovery_key.txt
 vault.hta
