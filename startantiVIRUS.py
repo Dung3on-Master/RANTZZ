@@ -44,7 +44,6 @@ def scanstart():
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
 
-    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
 
@@ -200,7 +199,6 @@ def fullscanstart():
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
 
-    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
 
@@ -214,7 +212,7 @@ def fullscanstart():
     root = tkinter.Tk()
     root.withdraw()
 
-    print('starting scan')            
+    print('Preparing')            
 
     time.sleep(1)
 
@@ -236,6 +234,9 @@ def fullscanstart():
 
 
     #check if they are a virus program
+
+    print('starting scan')
+    time.sleep(1)
 
     infectfiles = []
     with click.progressbar(progs) as bar:
@@ -303,8 +304,6 @@ def spesificscanstart():
     with open('threats.txt') as inputfile:
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
-
-    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
 
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
