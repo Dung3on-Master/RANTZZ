@@ -3,7 +3,6 @@ import string, random, time, os
 import time
 from tkinter import *
 
-user = os.getenv('username')
 
 def rantsstart():
 
@@ -37,6 +36,7 @@ from tkinter import messagebox
 def scanstart():
 
 
+    user = os.getenv('username')
     whatfile = input("what folder should we scan? (desktop, downloads, documents, etc), (please start with a capital): ")
 
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
@@ -44,6 +44,7 @@ def scanstart():
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
 
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
 
@@ -139,6 +140,7 @@ from tkinter import *
 
 def movetosurcurefolder():
 
+    user = os.getenv('username')
     filesercure = input("what file do you want to Sercure? (please add the ending e.g paskey.txt): ")
     fileplace = input("What file is it in? (Downloads, Documents, etc): ")
 
@@ -194,11 +196,14 @@ from tkinter import messagebox
 def fullscanstart():
 
 
+    user = os.getenv('username')
+
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open('threats.txt') as inputfile:
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
 
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
 
@@ -212,7 +217,7 @@ def fullscanstart():
     root = tkinter.Tk()
     root.withdraw()
 
-    print('Preparing')            
+    print('starting scan')            
 
     time.sleep(1)
 
@@ -234,9 +239,6 @@ def fullscanstart():
 
 
     #check if they are a virus program
-
-    print('starting scan')
-    time.sleep(1)
 
     infectfiles = []
     with click.progressbar(progs) as bar:
@@ -298,12 +300,15 @@ from tkinter import messagebox
 def spesificscanstart():
 
 
+    user = os.getenv('username')
     Whatfile = input("What File Should We Scan? ")
 
     os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
     with open('threats.txt') as inputfile:
         threats = ", ".join([line.rstrip("\n") for line in inputfile])
         allthreats = threats.split(', ')
+
+    os.chdir(f"C:/Users/{user}/Desktop/antiVIRUS")
 
     with open("threatextentions.txt") as inputfile:
         allthreatsexten = inputfile.read().split(', ')
@@ -458,6 +463,7 @@ import time, os, wget
 
 def update():
 
+    user = os.getenv('username')
 
     yesorno = input("Are you Sure? (y or n): ")
 
@@ -487,6 +493,8 @@ def update():
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
+
+user = os.getenv('username')
 
 file = open(f"C:/Users/{user}/Desktop/passkey.txt","w") 
 
