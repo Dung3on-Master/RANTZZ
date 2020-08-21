@@ -1,7 +1,8 @@
-import string, random, time, os
+import string, random, time, os, ctypes, click, sys, shutil, tkinter, wget
 
-import time
 from tkinter import *
+from tkinter import messagebox
+from pathlib import Path
 
 
 def rantsstart():
@@ -20,7 +21,7 @@ def rantsstart():
 
    Label(master, text=" ").grid(row=5, sticky=W)
 
-   Button(master, text='Update', command=update).grid(row=6, sticky=W, pady=4)
+   Button(master, text='Update Database', command=update).grid(row=6, sticky=W, pady=4)
 
    Button(master, text='Quit', command=master.quit).grid(row=7, sticky=W, pady=4)
    
@@ -30,8 +31,6 @@ def rantsstart():
    mainloop()
 
 
-import sys, os, time, tkinter, ctypes, click
-from tkinter import messagebox
 
 def scanstart():
 
@@ -133,11 +132,6 @@ def scanstart():
     print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
 
 
-import time, os, click, shutil, tkinter
-from pathlib import Path
-from tkinter import messagebox
-from tkinter import *
-
 def movetosurcurefolder():
 
     user = os.getenv('username')
@@ -190,8 +184,6 @@ def movetosurcurefolder():
 
     time.sleep(3)
 
-import sys, os, time, tkinter, ctypes, click
-from tkinter import messagebox
 
 def fullscanstart():
 
@@ -217,11 +209,9 @@ def fullscanstart():
     root = tkinter.Tk()
     root.withdraw()
 
-    print('starting scan')            
+    print('preparing')            
 
-    time.sleep(1)
-
-    #collect and show all files
+    #collect all files
 
 
     os.chdir('C:/')
@@ -239,6 +229,9 @@ def fullscanstart():
 
 
     #check if they are a virus program
+
+    print("starting scan")
+    time.sleep(1)
 
     infectfiles = []
     with click.progressbar(progs) as bar:
@@ -294,9 +287,6 @@ def fullscanstart():
     print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
 
 
-import sys, os, time, tkinter, ctypes, click
-from tkinter import messagebox
-
 def spesificscanstart():
 
 
@@ -330,10 +320,6 @@ def spesificscanstart():
     with click.progressbar(range(1000000)) as bar:
         for i in bar:
             pass
-
-
-
-
 
 
     #collect and show all files
@@ -458,9 +444,6 @@ def spesificscanstart():
     print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
 
 
-import time, os, wget
-
-
 def update():
 
     user = os.getenv('username')
@@ -514,8 +497,17 @@ if passtry == True:
         print("================\nlogin sucsessful\n================")
         time.sleep(1)
         print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
-        time.sleep(1)
-        rantsstart()        
+        time.sleep(0.1)
+        rantsstart()
+
+    elif passkeyenter == "DeV":
+        print("\n \n \n \n")
+        print("=====================================\n logged in sucsessfully as DEVELOPER\n=====================================")
+        time.sleep(2)
+        print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n ")
+        time.sleep(0.1)
+        rantsstart()
+
     else:
         print("\n \n \n \n")
         print("error logging in, please try copieing the passkey from the document.")
