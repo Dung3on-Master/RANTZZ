@@ -35,13 +35,12 @@ try:
         wget.download(threat_txt_url, f'{main_file}\\threatstxt.list')
         wget.download(RANTZZ_main_url, f'{main_file}\\RANTZZ.py')
 
-        create_shortcut()
-
     except ConnectionError:
         sg.popup("An error occurred, please check your internet connection")
         exit()
 
     sg.popup("RANTZZ was successfully installed")
+    create_shortcut()
 
 except:
     try:
