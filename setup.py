@@ -11,7 +11,16 @@ RANTZZ_main_url = 'https://rantzzsecurity.weebly.com/uploads/1/3/0/9/130919827/r
 user = os.getenv('username')
 
 main_file = f'C:\\Users\\{user}\\AppData\\Local\\RANTZZ'
+desktop = f'C:/Users/{user}/Desktop' 
+path = os.path.join(desktop, 'RANTZZ.lnk')
+target = f'C:/Users/{user}/Desktop/ANTIvirus2/menu1.py'
 
+def create_shortcut():
+    shell = win32com.client.Dispatch("WScript.Shell")
+    shortcut = shell.CreateShortCut(path)
+    shortcut.Targetpath = target
+    shortcut.WindowStyle = 1 # 7 - Minimized, 3 - Maximized, 1 - Normal
+    shortcut.save()
 
 try:
     os.chdir(main_file)
@@ -26,15 +35,7 @@ try:
         wget.download(threat_txt_url, f'{main_file}\\threatstxt.list')
         wget.download(RANTZZ_main_url, f'{main_file}\\RANTZZ.py')
 
-        desktop = f'C:/Users/{user}/Desktop'
-        path = os.path.join(desktop, 'HI.lnk')
-        target = f'C:/Users/{user}/Desktop/ANTIvirus2/menu1.py'
-
-        shell = win32com.client.Dispatch("WScript.Shell")
-        shortcut = shell.CreateShortCut(path)
-        shortcut.Targetpath = target
-        shortcut.WindowStyle = 1 # 7 - Minimized, 3 - Maximized, 1 - Normal
-        shortcut.save()
+        create_shortcut()
 
     except ConnectionError:
         sg.popup("An error occurred, please check your internet connection")
@@ -53,14 +54,6 @@ except:
     wget.download(threat_txt_url, f'{main_file}\\threatstxt.list')
     wget.download(RANTZZ_main_url, f'{main_file}\\RANTZZ.py')
 
-    # pythoncom.CoInitialize() # remove the '#' at the beginning of the line if running in a thread.
-    desktop = f'C:/Users/{user}/Desktop' # path to where you want to put the .lnk
-    path = os.path.join(desktop, 'RANTZZ.lnk')
-    target = f'C:/Users/{user}/Desktop/ANTIvirus2/menu1.py'
+    create_shortcut()
 
-    shell = win32com.client.Dispatch("WScript.Shell")
-    shortcut = shell.CreateShortCut(path)
-    shortcut.Targetpath = target
-    shortcut.WindowStyle = 1 # 7 - Minimized, 3 - Maximized, 1 - Normal
-    shortcut.save()
     sg.popup("RANTZZ was successfully installed \na shortcut was created on your Desktop")
