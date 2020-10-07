@@ -13,7 +13,7 @@ user = os.getenv('username')
 main_file = f'C:\\Users\\{user}\\AppData\\Local\\RANTZZ'
 desktop = f'C:/Users/{user}/Desktop' 
 path = os.path.join(desktop, 'RANTZZ.lnk')
-target = f'C:/Users/{user}/Desktop/ANTIvirus2/menu1.py'
+target = f'C:\\Users\\{user}\\AppData\\Local\\RANTZZ\\rantzz.py'
 
 def create_shortcut():
     shell = win32com.client.Dispatch("WScript.Shell")
