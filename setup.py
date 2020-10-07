@@ -26,8 +26,7 @@ try:
         wget.download(threat_txt_url, f'{main_file}\\threatstxt.list')
         wget.download(RANTZZ_main_url, f'{main_file}\\RANTZZ.py')
 
-        # pythoncom.CoInitialize() # remove the '#' at the beginning of the line if running in a thread.
-        desktop = f'C:/Users/{user}/Desktop' # path to where you want to put the .lnk
+        desktop = f'C:/Users/{user}/Desktop'
         path = os.path.join(desktop, 'HI.lnk')
         target = f'C:/Users/{user}/Desktop/ANTIvirus2/menu1.py'
 
@@ -44,7 +43,10 @@ try:
     sg.popup("RANTZZ was successfully installed")
 
 except:
-    os.mkdir(main_file)
+    try:
+        os.mkdir(main_file)
+    except FileExistsError:
+        print("\n")
     os.chdir(main_file)
     wget.download(threats_url, f'{main_file}\\threats.list')        
     wget.download(threat_extentions_url, f'{main_file}\\threatextentions.list')
